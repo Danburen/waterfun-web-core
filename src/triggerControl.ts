@@ -24,7 +24,7 @@ export function throttle(func: Function, delay: number, onThrottled?: Function) 
  * @param delay delay debounce
  */
 export function deBounce(func: Function,delay: number) {
-    let timer: NodeJS.Timeout;
+    let timer:number;
     return(...args: any[]) => {
         clearTimeout(timer);
         timer = setTimeout(() => {
@@ -40,10 +40,10 @@ export function deBounce(func: Function,delay: number) {
  * @param delay delay debounce
  */
 export function deBounceLeading(func: Function,delay: number) {
-    let timer: NodeJS.Timeout | null;
+    let timer: number | null;
     return(...args: any[]) => {
         if(!timer) func.apply(func, args);
-        clearTimeout(timer as NodeJS.Timeout);
+        clearTimeout(timer as number);
         timer = setTimeout(() => {
             timer = null;
         },delay);

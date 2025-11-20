@@ -1,4 +1,4 @@
-import type {LoginType} from "~/types/api/auth";
+import type {LoginType} from "./types/api/auth";
 
 export const REGEX = {
     username: /^[0-9a-zA-Z_]+$/,

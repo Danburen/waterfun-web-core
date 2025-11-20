@@ -1,5 +1,5 @@
 // Basic http status
-import type { ToCamelCase } from "~/utils/dataMapper"
+import type { ToCamelCase } from "./dataMapper"
 
 export enum HttpStatus {
     OK = 200,
@@ -75,6 +75,7 @@ export function createAutoErrorMap<T extends Record<string, number>>(enumObj: T)
             const camelKey = key
                 .toLowerCase()
                 .replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+            //@ts-ignore
             result[value] = camelKey as ToCamelCase<keyof T & string>;
         }
     });

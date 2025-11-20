@@ -14,7 +14,7 @@ export interface I18nTranslator {
 
 export interface I18nService {
     /**
-     * 获取翻译器实例
+     * get translate instance
      */
     getTranslator(): I18nTranslator;
 }

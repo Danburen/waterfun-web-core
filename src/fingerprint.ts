@@ -1,4 +1,4 @@
-import {generate256Hash} from "~/utils/simple-cypto";
+import {generate256Hash} from "./simple-cypto";
 
 interface DeviceFeatures {
     screen: {
